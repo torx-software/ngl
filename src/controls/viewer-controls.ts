@@ -66,12 +66,15 @@ class ViewerControls {
 
   /**
    * Trigger render and emit changed event
+   * @param {boolean} skipDispatch - don't signal for a change
    * @emits {ViewerControls.signals.changed}
    * @return {undefined}
    */
-  changed () {
+  changed (skipDispatch: boolean = false) {
     this.viewer.requestRender()
-    this.signals.changed.dispatch()
+    if (!skipDispatch) {
+      this.signals.changed.dispatch()
+    }
   }
 
   getPositionOnCanvas (position: Vector3, optionalTarget?: Vector2) {
@@ -121,9 +124,10 @@ class ViewerControls {
   /**
    * set scene orientation
    * @param {OrientationMatrix|Array} orientation - scene orientation
+   * @param {boolean} skipDispatch - do not trigger a change signal when orienting
    * @return {undefined}
    */
-  orient (orientation?: Matrix4) {
+  orient (orientation?: Matrix4, skipDispatch?: boolean) {
     ensureMatrix4(orientation).decompose(tmpP, tmpQ, tmpS)
 
     const v = this.viewer
@@ -131,7 +135,7 @@ class ViewerControls {
     v.translationGroup.position.copy(tmpP)
     v.cameraDistance = tmpS.z
     v.updateZoom()
-    this.changed()
+    this.changed(skipDispatch)
   }
 
   /**

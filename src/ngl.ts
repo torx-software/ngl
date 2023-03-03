@@ -120,6 +120,7 @@ import BoxBuffer from './buffer/box-buffer'
 import ConeBuffer from './buffer/cone-buffer'
 import CylinderBuffer from './buffer/cylinder-buffer'
 import EllipsoidBuffer from './buffer/ellipsoid-buffer'
+import IcosahedronBuffer from './buffer/icosahedron-buffer'
 import MeshBuffer from './buffer/mesh-buffer'
 import OctahedronBuffer from './buffer/octahedron-buffer'
 import PointBuffer from './buffer/point-buffer'
@@ -304,6 +305,7 @@ export {
   ConeBuffer,
   CylinderBuffer,
   EllipsoidBuffer,
+  IcosahedronBuffer,
   MeshBuffer,
   OctahedronBuffer,
   PointBuffer,

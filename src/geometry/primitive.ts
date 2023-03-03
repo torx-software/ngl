@@ -182,6 +182,13 @@ export class TetrahedronPrimitive extends BoxPrimitive {
 }
 
 /**
+ * Tetrahedron geometry primitive
+ */
+export class IcosahedronPrimitive extends BoxPrimitive {
+  static type = 'icosahedron'
+}
+
+/**
  * Cylinder geometry primitive
  */
 export class CylinderPrimitive extends Primitive {

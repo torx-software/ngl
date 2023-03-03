@@ -251,6 +251,10 @@ class PickingProxy {
   /**
    * @type {Object}
    */
+  get icosahedron () { return this._objectIfType('icosahedron') as ShapePrimitive }
+  /**
+   * @type {Object}
+   */
   get octahedron () { return this._objectIfType('octahedron') as ShapePrimitive }
   /**
    * @type {Object}
@@ -326,6 +330,8 @@ class PickingProxy {
       msg = `distance: ${this.distance.atom1.qualifiedName()} - ${this.distance.atom2.qualifiedName()} (${this.distance.structure.name})`
     } else if (this.ellipsoid) {
       msg = this.ellipsoid.name
+    } else if (this.icosahedron) {
+      msg = this.icosahedron.name
     } else if (this.octahedron) {
       msg = this.octahedron.name
     } else if (this.point) {
