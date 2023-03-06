@@ -68,6 +68,12 @@ export declare class TetrahedronPrimitive extends BoxPrimitive {
     static type: string;
 }
 /**
+ * Tetrahedron geometry primitive
+ */
+export declare class IcosahedronPrimitive extends BoxPrimitive {
+    static type: string;
+}
+/**
  * Cylinder geometry primitive
  */
 export declare class CylinderPrimitive extends Primitive {
