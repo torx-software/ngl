@@ -11,7 +11,7 @@ import { createParams, ensureFloat32Array, getUintArray } from '../utils'
 import {
   ArrowPrimitive, BoxPrimitive, ConePrimitive, CylinderPrimitive, EllipsoidPrimitive,
   OctahedronPrimitive, SpherePrimitive, TetrahedronPrimitive, TextPrimitive,
-  TorusPrimitive, PointPrimitive, WidelinePrimitive
+  TorusPrimitive, PointPrimitive, WidelinePrimitive, IcosahedronPrimitive
 } from './primitive'
 import { MeshPicker } from '../utils/picker'
 import Buffer from '../buffer/buffer'
@@ -23,7 +23,7 @@ const tmpBox = new Box3()
 const Primitives = [
   ArrowPrimitive, BoxPrimitive, ConePrimitive, CylinderPrimitive,
   EllipsoidPrimitive, OctahedronPrimitive, SpherePrimitive, TetrahedronPrimitive,
-  TextPrimitive, TorusPrimitive, PointPrimitive, WidelinePrimitive
+  TextPrimitive, TorusPrimitive, PointPrimitive, WidelinePrimitive, IcosahedronPrimitive
 ]
 
 export const ShapeDefaultParameters = {
@@ -324,6 +324,26 @@ class Shape {
    */
   addTetrahedron (position: Vector3|[number, number, number], color: Color|[number, number, number], size: number, heightAxis: Vector3|[number, number, number], depthAxis: Vector3|[number, number, number], name: string) {
     TetrahedronPrimitive.objectToShape(
+      this, { position, color, size, heightAxis, depthAxis, name }
+    )
+    return this
+  }
+
+  /**
+   * Add an icosahedron
+   * @example
+   * shape.addIcosahedron([ 0, 3, 0 ], [ 1, 0, 1 ], 2, [ 0, 1, 1 ], [ 1, 0, 1 ]);
+   *
+   * @param {Vector3|Array} position - position vector or array
+   * @param {Color|Array} color - color object or array
+   * @param {Float} size - size value
+   * @param {Vector3|Array} heightAxis - height axis vector or array
+   * @param {Vector3|Array} depthAxis - depth axis vector or array
+   * @param {String} [name] - text
+   * @return {Shape} this object
+   */
+  addIcosahedron (position: Vector3|[number, number, number], color: Color|[number, number, number], size: number, heightAxis: Vector3|[number, number, number], depthAxis: Vector3|[number, number, number], name: string) {
+    IcosahedronPrimitive.objectToShape(
       this, { position, color, size, heightAxis, depthAxis, name }
     )
     return this

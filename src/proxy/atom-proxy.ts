@@ -81,7 +81,6 @@ class AtomProxy {
    * @type {ResidueProxy}
    */
   get residue (): ResidueProxy {
-    console.warn('residue - might be expensive')
     return this.structure.getResidueProxy(this.residueIndex)
   }
 
