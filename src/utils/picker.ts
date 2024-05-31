@@ -12,7 +12,8 @@ import Selection from '../selection/selection'
 import {
   ArrowPrimitive, BoxPrimitive, ConePrimitive, CylinderPrimitive,
   EllipsoidPrimitive, OctahedronPrimitive, SpherePrimitive,
-  TetrahedronPrimitive, TorusPrimitive, PointPrimitive, WidelinePrimitive
+  TetrahedronPrimitive, TorusPrimitive, PointPrimitive, WidelinePrimitive,
+  IcosahedronPrimitive
 } from '../geometry/primitive'
 import { contactTypeName, Contacts } from '../chemistry/interactions/contact'
 import { TypedArray } from '../types';
@@ -283,6 +284,10 @@ class EllipsoidPicker extends ShapePicker {
   get primitive () { return EllipsoidPrimitive }
 }
 
+class IcosahedronPicker extends ShapePicker {
+  get primitive () { return IcosahedronPrimitive }
+}
+
 class OctahedronPicker extends ShapePicker {
   get primitive () { return OctahedronPrimitive }
 }
@@ -442,6 +447,7 @@ PickerRegistry.add('box', BoxPicker)
 PickerRegistry.add('cone', ConePicker)
 PickerRegistry.add('cylinder', CylinderPicker)
 PickerRegistry.add('ellipsoid', EllipsoidPicker)
+PickerRegistry.add('icosahedron', IcosahedronPicker)
 PickerRegistry.add('octahedron', OctahedronPicker)
 PickerRegistry.add('sphere', SpherePicker)
 PickerRegistry.add('tetrahedron', TetrahedronPicker)
@@ -463,6 +469,7 @@ export {
   ClashPicker,
   DistancePicker,
   EllipsoidPicker,
+  IcosahedronPicker,
   IgnorePicker,
   OctahedronPicker,
   MeshPicker,
