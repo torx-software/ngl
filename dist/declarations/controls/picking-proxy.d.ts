@@ -167,6 +167,10 @@ declare class PickingProxy {
     /**
      * @type {Object}
      */
+    get icosahedron(): ShapePrimitive;
+    /**
+     * @type {Object}
+     */
     get octahedron(): ShapePrimitive;
     /**
      * @type {Object}
