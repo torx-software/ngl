@@ -4,7 +4,7 @@
  * @private
  */
 import { Vector3 } from 'three';
-import { ArrowPrimitive, BoxPrimitive, ConePrimitive, CylinderPrimitive, EllipsoidPrimitive, OctahedronPrimitive, SpherePrimitive, TetrahedronPrimitive, TorusPrimitive, PointPrimitive, WidelinePrimitive } from '../geometry/primitive';
+import { ArrowPrimitive, BoxPrimitive, ConePrimitive, CylinderPrimitive, EllipsoidPrimitive, OctahedronPrimitive, SpherePrimitive, TetrahedronPrimitive, TorusPrimitive, PointPrimitive, WidelinePrimitive, IcosahedronPrimitive } from '../geometry/primitive';
 import { Contacts } from '../chemistry/interactions/contact';
 import { TypedArray } from '../types';
 import Component from '../component/component';
@@ -147,6 +147,9 @@ declare class DistancePicker extends BondPicker {
 declare class EllipsoidPicker extends ShapePicker {
     get primitive(): typeof EllipsoidPrimitive;
 }
+declare class IcosahedronPicker extends ShapePicker {
+    get primitive(): typeof IcosahedronPrimitive;
+}
 declare class OctahedronPicker extends ShapePicker {
     get primitive(): typeof OctahedronPrimitive;
 }
@@ -232,4 +235,4 @@ declare class PointPicker extends ShapePicker {
 declare class WidelinePicker extends ShapePicker {
     get primitive(): typeof WidelinePrimitive;
 }
-export { Picker, ShapePicker, ArrowPicker, AtomPicker, AxesPicker, BondPicker, BoxPicker, ConePicker, ContactPicker, CylinderPicker, ClashPicker, DistancePicker, EllipsoidPicker, IgnorePicker, OctahedronPicker, MeshPicker, SlicePicker, SpherePicker, SurfacePicker, TetrahedronPicker, TorusPicker, UnitcellPicker, UnknownPicker, VolumePicker, PointPicker, WidelinePicker };
+export { Picker, ShapePicker, ArrowPicker, AtomPicker, AxesPicker, BondPicker, BoxPicker, ConePicker, ContactPicker, CylinderPicker, ClashPicker, DistancePicker, EllipsoidPicker, IcosahedronPicker, IgnorePicker, OctahedronPicker, MeshPicker, SlicePicker, SpherePicker, SurfacePicker, TetrahedronPicker, TorusPicker, UnitcellPicker, UnknownPicker, VolumePicker, PointPicker, WidelinePicker };
