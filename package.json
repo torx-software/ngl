@@ -1,5 +1,5 @@
 {
-  "name": "ngl",
+  "name": "@torx-software/ngl",
   "version": "2.4.0-torx",
   "description": "Scalable molecular graphics for the web",
   "main": "dist/ngl.umd.js",
